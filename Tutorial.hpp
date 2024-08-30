@@ -21,7 +21,20 @@ struct Tutorial : RTG::Application {
 
 	//Pipelines:
 
-	//TODO
+	struct BackgroundPipeline {
+	//no descriptor set layouts
+
+	//no push constants
+
+		VkPipelineLayout layout = VK_NULL_HANDLE;
+
+		//no vertex bindings
+		
+		VkPipeline handle = VK_NULL_HANDLE;
+
+		void create(RTG &, VkRenderPass render_pass, uint32_t subpass);
+		void destroy(RTG &);
+	} background_pipeline;
 
 	//pools from which per-workspace things are allocated:
 	VkCommandPool command_pool = VK_NULL_HANDLE;
